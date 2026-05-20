@@ -1,7 +1,7 @@
-//This was done using an Arduino Mega 2560, an IR LED, an IR reciever, and a A2222 NPN transistor
+//This was done using an Arduino Mega 2560, an IR LED, an IR receiver, and a A2222 NPN transistor
 //Author Evan Fink
 //Last edited 05-20-2026
-//IR LED = Pin 3, IR Reciever = Pin 11, Button1 = Pin 10, Button2 = Pin 9, Button3 = Pin 8, Button4 = Pin 7, Button5 = Pin 6
+//IR LED = Pin 3, IR Receiver = Pin 11, Button1 = Pin 10, Button2 = Pin 9, Button3 = Pin 8, Button4 = Pin 7, Button5 = Pin 6
 
 #include <IRremote.hpp>
 #define IR_SEND_PIN 3
@@ -19,7 +19,7 @@ uint32_t last_decodedRawData = 0;
 #define KEY_LEFT       0x61A06897
 #define KEY_RIGHT      0x61A0A857
 #define KEY_ENTER      0x61A018E7
-void translateIR() //for recieving IR signals
+void translateIR() //for receiving IR signals
 {
     if (irrecv.decodedIRData.flags & IRDATA_FLAGS_IS_REPEAT) // for handling repeated or held signals
     {
